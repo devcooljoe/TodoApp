@@ -1,7 +1,7 @@
-import 'package:clean_architecture_todo_app/domain/model/todo.dart';
+import 'package:clean_architecture_todo_app/data/model/todo.dart';
 import 'package:clean_architecture_todo_app/domain/repository/todos_repository.dart';
 
- class CreateTodoUseCase {
+class CreateTodoUseCase {
   final TodosRepository _repository;
 
   const CreateTodoUseCase(this._repository);

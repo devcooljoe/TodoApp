@@ -1,4 +1,4 @@
-import 'package:clean_architecture_todo_app/domain/model/todo.dart';
+import 'package:clean_architecture_todo_app/data/model/todo.dart';
 import 'package:clean_architecture_todo_app/presentation/viewmodel/todoform/todo_form_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -84,13 +84,7 @@ class _TodoFormPageState extends ConsumerState<TodoFormPage> {
     return Form(
       key: _formKey,
       child: Column(
-        children: [
-          _buildTitleFormWidget(),
-          const SizedBox(height: 16),
-          _buildDescriptionFormWidget(),
-          const SizedBox(height: 16),
-          _buildDueDateFormWidget()
-        ],
+        children: [_buildTitleFormWidget(), const SizedBox(height: 16), _buildDescriptionFormWidget(), const SizedBox(height: 16), _buildDueDateFormWidget()],
       ),
     );
   }

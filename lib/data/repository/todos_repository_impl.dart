@@ -1,9 +1,9 @@
 import 'package:clean_architecture_todo_app/data/datasource/database/todos_database.dart';
 import 'package:clean_architecture_todo_app/data/mapper/todo_list_mapper.dart';
 import 'package:clean_architecture_todo_app/data/mapper/todo_mapper.dart';
-import 'package:clean_architecture_todo_app/domain/model/todo.dart';
-import 'package:clean_architecture_todo_app/domain/model/todo_id.dart';
-import 'package:clean_architecture_todo_app/domain/model/todo_list.dart';
+import 'package:clean_architecture_todo_app/data/model/todo.dart';
+import 'package:clean_architecture_todo_app/data/model/todo_id.dart';
+import 'package:clean_architecture_todo_app/data/model/todo_list.dart';
 import 'package:clean_architecture_todo_app/domain/repository/todos_repository.dart';
 
 class TodosRepositoryImpl implements TodosRepository {

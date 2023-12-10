@@ -1,5 +1,4 @@
 import 'package:clean_architecture_todo_app/data/datasource/database/todos_database.dart';
-import 'package:clean_architecture_todo_app/data/entity/todos_entity.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
@@ -20,15 +19,15 @@ class TodosDatabaseImpl implements TodosDatabase {
   }
 
   @override
-  Future<TodoListEntity> allTodos() async {
+  Future<List<Map<String, dynamic>>> allTodos() async {
     final db = await database;
     return db.query(_tableName);
   }
 
   @override
-  Future<TodoEntity> insertTodo(final TodoEntity todo) async {
+  Future<Map<String, dynamic>> insertTodo(final Map<String, dynamic> todo) async {
     final db = await database;
-    late final TodoEntity todoEntity;
+    late final Map<String, dynamic> todoEntity;
     await db.transaction((txn) async {
       final id = await txn.insert(
         _tableName,
@@ -42,7 +41,7 @@ class TodosDatabaseImpl implements TodosDatabase {
   }
 
   @override
-  Future<void> updateTodo(final TodoEntity todo) async {
+  Future<void> updateTodo(final Map<String, dynamic> todo) async {
     final db = await database;
     final int id = todo['id'];
     await db.update(

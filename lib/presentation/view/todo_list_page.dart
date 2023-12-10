@@ -1,5 +1,5 @@
-import 'package:clean_architecture_todo_app/domain/model/todo.dart';
-import 'package:clean_architecture_todo_app/domain/model/todo_list.dart';
+import 'package:clean_architecture_todo_app/data/model/todo.dart';
+import 'package:clean_architecture_todo_app/data/model/todo_list.dart';
 import 'package:clean_architecture_todo_app/presentation/view/todo_form_page.dart';
 import 'package:clean_architecture_todo_app/presentation/viewmodel/todolist/filter_kind_viewmodel.dart';
 import 'package:clean_architecture_todo_app/presentation/viewmodel/todolist/todo_list_viewmodel.dart';

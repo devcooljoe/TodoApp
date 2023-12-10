@@ -1,4 +1,4 @@
-import 'package:clean_architecture_todo_app/domain/model/todo_id.dart';
+import 'package:clean_architecture_todo_app/data/model/todo_id.dart';
 import 'package:clean_architecture_todo_app/domain/repository/todos_repository.dart';
 import 'package:clean_architecture_todo_app/domain/usecase/update_todo_usecase.dart';
 import 'package:clean_architecture_todo_app/domain/usecase/update_todo_usecase_impl.dart';
