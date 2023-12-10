@@ -1,10 +1,16 @@
 import 'package:clean_architecture_todo_app/domain/model/todo.dart';
+import 'package:clean_architecture_todo_app/domain/repository/todos_repository.dart';
 
-abstract class CreateTodoUseCase {
+ class CreateTodoUseCase {
+  final TodosRepository _repository;
+
+  const CreateTodoUseCase(this._repository);
   Future<Todo> execute(
-    final String title,
-    final String description,
-    final bool isCompleted,
-    final DateTime dueDate,
-  );
+    String title,
+    String description,
+    bool isCompleted,
+    DateTime dueDate,
+  ) {
+    return _repository.createTodo(title, description, isCompleted, dueDate);
+  }
 }

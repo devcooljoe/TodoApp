@@ -13,7 +13,7 @@ class State<T> with _$State<T> {
 
   bool get isInit => maybeWhen(init: () => true, orElse: () => false);
 
-  bool get isLoading =>  maybeWhen(loading: () => true, orElse: () => false);
+  bool get isLoading => maybeWhen(loading: () => true, orElse: () => false);
 
   bool get isSuccess => maybeMap(success: (_) => true, orElse: () => false);
 
