@@ -1,5 +1,5 @@
+import 'package:clean_architecture_todo_app/app/typedef.dart';
 import 'package:clean_architecture_todo_app/data/model/todo.dart';
-import 'package:clean_architecture_todo_app/data/model/todo_id.dart';
 import 'package:clean_architecture_todo_app/data/model/todo_list.dart';
 
 abstract class TodosRepository {

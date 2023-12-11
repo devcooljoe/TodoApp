@@ -1,6 +1,8 @@
+import 'package:clean_architecture_todo_app/app/typedef.dart';
+
 abstract class TodosDatabase {
-  Future<List<Map<String, dynamic>>> allTodos();
-  Future<Map<String, dynamic>> insertTodo(final Map<String, dynamic> todoEntity);
-  Future<void> updateTodo(final Map<String, dynamic> todoEntity);
-  Future<void> deleteTodo(final int id);
+  Future<TodoListEntity> allTodos();
+  Future<TodoEntity> insertTodo(final TodoEntity todoEntity);
+  Future<void> updateTodo(final TodoEntity todoEntity);
+  Future<void> deleteTodo(final TodoId id);
 }

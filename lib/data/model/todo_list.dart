@@ -1,14 +1,18 @@
+import 'package:clean_architecture_todo_app/app/typedef.dart';
 import 'package:clean_architecture_todo_app/data/model/todo.dart';
-import 'package:clean_architecture_todo_app/data/model/todo_id.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'todo_list.freezed.dart';
+part 'todo_list.g.dart';
 
 @freezed
-class TodoList with _$TodoList {
-  const factory TodoList({required List<Todo> values}) = _TodoList;
+abstract class TodoList with _$TodoList {
+  @JsonSerializable(explicitToJson: true)
+  factory TodoList({required List<Todo> values}) = _TodoList;
 
-  const TodoList._();
+  TodoList._();
+
+  factory TodoList.fromJson(TodoEntity json) => _$TodoListFromJson(json);
 
   operator [](final int index) => values[index];
 

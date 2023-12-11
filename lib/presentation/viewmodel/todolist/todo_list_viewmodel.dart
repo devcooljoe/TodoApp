@@ -1,7 +1,7 @@
+import 'package:clean_architecture_todo_app/app/di.dart';
+import 'package:clean_architecture_todo_app/app/typedef.dart';
 import 'package:clean_architecture_todo_app/data/model/todo.dart';
-import 'package:clean_architecture_todo_app/data/model/todo_id.dart';
 import 'package:clean_architecture_todo_app/data/model/todo_list.dart';
-import 'package:clean_architecture_todo_app/domain/domain_module.dart';
 import 'package:clean_architecture_todo_app/domain/usecase/create_todo_usecase.dart';
 import 'package:clean_architecture_todo_app/domain/usecase/delete_todo_usecase.dart';
 import 'package:clean_architecture_todo_app/domain/usecase/get_todo_list_usecase.dart';
@@ -33,10 +33,10 @@ final filteredTodoListProvider = Provider.autoDispose<State<TodoList>>((ref) {
 
 final todoListViewModelStateNotifierProvider = StateNotifierProvider.autoDispose<TodoListViewModel, State<TodoList>>((ref) {
   return TodoListViewModel(
-    ref.watch(getTodoListUseCaseProvider),
-    ref.watch(createTodoUseCaseProvider),
-    ref.watch(updateTodoUseCaseProvider),
-    ref.watch(deleteTodoUseCaseProvider),
+    locator<GetTodoListUseCase>(),
+    locator<CreateTodoUseCase>(),
+    locator<UpdateTodoUseCase>(),
+    locator<DeleteTodoUseCase>(),
   );
 });
 
@@ -97,7 +97,7 @@ class TodoListViewModel extends StateNotifier<State<TodoList>> {
   updateTodo(final Todo newTodo) async {
     try {
       await _updateTodoUseCase.execute(
-        newTodo.id,
+        newTodo.id!,
         newTodo.title,
         newTodo.description,
         newTodo.isCompleted,

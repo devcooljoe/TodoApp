@@ -1,5 +1,12 @@
-import 'package:clean_architecture_todo_app/data/model/todo_id.dart';
+import 'package:clean_architecture_todo_app/app/typedef.dart';
+import 'package:clean_architecture_todo_app/domain/repository/todos_repository.dart';
+import 'package:injectable/injectable.dart';
 
-abstract class DeleteTodoUseCase {
-  Future<void> execute(final TodoId id);
+@injectable
+class DeleteTodoUseCase {
+  final TodosRepository _repository;
+
+  const DeleteTodoUseCase(this._repository);
+
+  Future<void> execute(TodoId id) => _repository.deleteTodo(id);
 }

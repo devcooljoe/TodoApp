@@ -1,5 +1,4 @@
 import 'package:clean_architecture_todo_app/data/model/todo.dart';
-import 'package:clean_architecture_todo_app/data/model/todo_id.dart';
 import 'package:clean_architecture_todo_app/data/model/todo_list.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -34,7 +33,7 @@ void main() {
   group('length getter', () {
     group('when todo list is empty', () {
       test('should return 0', () {
-        final actual = const TodoList(values: []).length;
+        final actual = TodoList(values: []).length;
         expect(actual, 0);
       });
     });
@@ -53,7 +52,7 @@ void main() {
 
 Todo _buildTodo(final int id) {
   return Todo(
-    id: TodoId(value: id),
+    id: id,
     title: 'title$id',
     description: 'description$id',
     isCompleted: false,

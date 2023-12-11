@@ -1,7 +1,11 @@
+import 'package:clean_architecture_todo_app/app/typedef.dart';
 import 'package:clean_architecture_todo_app/data/datasource/database/todos_database.dart';
+import 'package:injectable/injectable.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
+@dev
+@Injectable(as: TodosDatabase)
 class TodosDatabaseImpl implements TodosDatabase {
   static const _databaseName = 'todos_database';
   static const _tableName = 'todos_table';
@@ -19,15 +23,15 @@ class TodosDatabaseImpl implements TodosDatabase {
   }
 
   @override
-  Future<List<Map<String, dynamic>>> allTodos() async {
+  Future<TodoListEntity> allTodos() async {
     final db = await database;
     return db.query(_tableName);
   }
 
   @override
-  Future<Map<String, dynamic>> insertTodo(final Map<String, dynamic> todo) async {
+  Future<TodoEntity> insertTodo(final TodoEntity todo) async {
     final db = await database;
-    late final Map<String, dynamic> todoEntity;
+    late final TodoEntity todoEntity;
     await db.transaction((txn) async {
       final id = await txn.insert(
         _tableName,
@@ -41,7 +45,7 @@ class TodosDatabaseImpl implements TodosDatabase {
   }
 
   @override
-  Future<void> updateTodo(final Map<String, dynamic> todo) async {
+  Future<void> updateTodo(final TodoEntity todo) async {
     final db = await database;
     final int id = todo['id'];
     await db.update(

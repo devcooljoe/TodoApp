@@ -1,5 +1,5 @@
+import 'package:clean_architecture_todo_app/app/typedef.dart';
 import 'package:clean_architecture_todo_app/data/model/todo.dart';
-import 'package:clean_architecture_todo_app/data/model/todo_id.dart';
 import 'package:clean_architecture_todo_app/presentation/viewmodel/todolist/todo_list_viewmodel.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -25,7 +25,7 @@ class TodoFormViewModel {
     if (todo == null) {
       _isNewTodo = true;
     } else {
-      _id = todo.id;
+      _id = todo.id!;
       _title = todo.title;
       _description = todo.description;
       _isCompleted = todo.isCompleted;

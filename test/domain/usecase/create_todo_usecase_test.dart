@@ -1,5 +1,4 @@
 import 'package:clean_architecture_todo_app/data/model/todo.dart';
-import 'package:clean_architecture_todo_app/data/model/todo_id.dart';
 import 'package:clean_architecture_todo_app/domain/repository/todos_repository.dart';
 import 'package:clean_architecture_todo_app/domain/usecase/create_todo_usecase.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -12,7 +11,7 @@ void main() {
   final CreateTodoUseCase usecase = CreateTodoUseCase(repository);
   final date = DateTime.now();
   final todo = Todo(
-    id: const TodoId(value: 1),
+    id: 1,
     title: 'title',
     description: 'description',
     isCompleted: false,

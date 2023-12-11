@@ -1,6 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'todo.dart';
 
@@ -11,39 +12,21 @@ part of 'todo.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-/// @nodoc
-class _$TodoTearOff {
-  const _$TodoTearOff();
-
-  _Todo call(
-      {required TodoId id,
-      required String title,
-      required String description,
-      required bool isCompleted,
-      required DateTime dueDate}) {
-    return _Todo(
-      id: id,
-      title: title,
-      description: description,
-      isCompleted: isCompleted,
-      dueDate: dueDate,
-    );
-  }
+Todo _$TodoFromJson(Map<String, dynamic> json) {
+  return _Todo.fromJson(json);
 }
 
 /// @nodoc
-const $Todo = _$TodoTearOff();
-
-/// @nodoc
 mixin _$Todo {
-  TodoId get id => throw _privateConstructorUsedError;
+  int? get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   bool get isCompleted => throw _privateConstructorUsedError;
   DateTime get dueDate => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $TodoCopyWith<Todo> get copyWith => throw _privateConstructorUsedError;
 }
@@ -51,116 +34,109 @@ mixin _$Todo {
 /// @nodoc
 abstract class $TodoCopyWith<$Res> {
   factory $TodoCopyWith(Todo value, $Res Function(Todo) then) =
-      _$TodoCopyWithImpl<$Res>;
+      _$TodoCopyWithImpl<$Res, Todo>;
+  @useResult
   $Res call(
-      {TodoId id,
+      {int? id,
       String title,
       String description,
       bool isCompleted,
       DateTime dueDate});
-
-  $TodoIdCopyWith<$Res> get id;
 }
 
 /// @nodoc
-class _$TodoCopyWithImpl<$Res> implements $TodoCopyWith<$Res> {
+class _$TodoCopyWithImpl<$Res, $Val extends Todo>
+    implements $TodoCopyWith<$Res> {
   _$TodoCopyWithImpl(this._value, this._then);
 
-  final Todo _value;
   // ignore: unused_field
-  final $Res Function(Todo) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
-    Object? title = freezed,
-    Object? description = freezed,
-    Object? isCompleted = freezed,
-    Object? dueDate = freezed,
+    Object? title = null,
+    Object? description = null,
+    Object? isCompleted = null,
+    Object? dueDate = null,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as TodoId,
-      title: title == freezed
+              as int?,
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      description: description == freezed
+      description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
-      isCompleted: isCompleted == freezed
+      isCompleted: null == isCompleted
           ? _value.isCompleted
           : isCompleted // ignore: cast_nullable_to_non_nullable
               as bool,
-      dueDate: dueDate == freezed
+      dueDate: null == dueDate
           ? _value.dueDate
           : dueDate // ignore: cast_nullable_to_non_nullable
               as DateTime,
-    ));
-  }
-
-  @override
-  $TodoIdCopyWith<$Res> get id {
-    return $TodoIdCopyWith<$Res>(_value.id, (value) {
-      return _then(_value.copyWith(id: value));
-    });
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$TodoCopyWith<$Res> implements $TodoCopyWith<$Res> {
-  factory _$TodoCopyWith(_Todo value, $Res Function(_Todo) then) =
-      __$TodoCopyWithImpl<$Res>;
+abstract class _$$TodoImplCopyWith<$Res> implements $TodoCopyWith<$Res> {
+  factory _$$TodoImplCopyWith(
+          _$TodoImpl value, $Res Function(_$TodoImpl) then) =
+      __$$TodoImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
-      {TodoId id,
+      {int? id,
       String title,
       String description,
       bool isCompleted,
       DateTime dueDate});
-
-  @override
-  $TodoIdCopyWith<$Res> get id;
 }
 
 /// @nodoc
-class __$TodoCopyWithImpl<$Res> extends _$TodoCopyWithImpl<$Res>
-    implements _$TodoCopyWith<$Res> {
-  __$TodoCopyWithImpl(_Todo _value, $Res Function(_Todo) _then)
-      : super(_value, (v) => _then(v as _Todo));
+class __$$TodoImplCopyWithImpl<$Res>
+    extends _$TodoCopyWithImpl<$Res, _$TodoImpl>
+    implements _$$TodoImplCopyWith<$Res> {
+  __$$TodoImplCopyWithImpl(_$TodoImpl _value, $Res Function(_$TodoImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _Todo get _value => super._value as _Todo;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
-    Object? title = freezed,
-    Object? description = freezed,
-    Object? isCompleted = freezed,
-    Object? dueDate = freezed,
+    Object? title = null,
+    Object? description = null,
+    Object? isCompleted = null,
+    Object? dueDate = null,
   }) {
-    return _then(_Todo(
-      id: id == freezed
+    return _then(_$TodoImpl(
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as TodoId,
-      title: title == freezed
+              as int?,
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      description: description == freezed
+      description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
-      isCompleted: isCompleted == freezed
+      isCompleted: null == isCompleted
           ? _value.isCompleted
           : isCompleted // ignore: cast_nullable_to_non_nullable
               as bool,
-      dueDate: dueDate == freezed
+      dueDate: null == dueDate
           ? _value.dueDate
           : dueDate // ignore: cast_nullable_to_non_nullable
               as DateTime,
@@ -170,17 +146,21 @@ class __$TodoCopyWithImpl<$Res> extends _$TodoCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Todo extends _Todo {
-  const _$_Todo(
-      {required this.id,
+@JsonSerializable(fieldRename: FieldRename.snake, includeIfNull: false)
+class _$TodoImpl extends _Todo {
+  _$TodoImpl(
+      {this.id,
       required this.title,
       required this.description,
       required this.isCompleted,
       required this.dueDate})
       : super._();
 
+  factory _$TodoImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TodoImplFromJson(json);
+
   @override
-  final TodoId id;
+  final int? id;
   @override
   final String title;
   @override
@@ -198,56 +178,59 @@ class _$_Todo extends _Todo {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Todo &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.title, title) ||
-                const DeepCollectionEquality().equals(other.title, title)) &&
+        (other.runtimeType == runtimeType &&
+            other is _$TodoImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.title, title) || other.title == title) &&
             (identical(other.description, description) ||
-                const DeepCollectionEquality()
-                    .equals(other.description, description)) &&
+                other.description == description) &&
             (identical(other.isCompleted, isCompleted) ||
-                const DeepCollectionEquality()
-                    .equals(other.isCompleted, isCompleted)) &&
-            (identical(other.dueDate, dueDate) ||
-                const DeepCollectionEquality().equals(other.dueDate, dueDate)));
+                other.isCompleted == isCompleted) &&
+            (identical(other.dueDate, dueDate) || other.dueDate == dueDate));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(title) ^
-      const DeepCollectionEquality().hash(description) ^
-      const DeepCollectionEquality().hash(isCompleted) ^
-      const DeepCollectionEquality().hash(dueDate);
 
   @JsonKey(ignore: true)
   @override
-  _$TodoCopyWith<_Todo> get copyWith =>
-      __$TodoCopyWithImpl<_Todo>(this, _$identity);
+  int get hashCode =>
+      Object.hash(runtimeType, id, title, description, isCompleted, dueDate);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$TodoImplCopyWith<_$TodoImpl> get copyWith =>
+      __$$TodoImplCopyWithImpl<_$TodoImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$TodoImplToJson(
+      this,
+    );
+  }
 }
 
 abstract class _Todo extends Todo {
-  const factory _Todo(
-      {required TodoId id,
-      required String title,
-      required String description,
-      required bool isCompleted,
-      required DateTime dueDate}) = _$_Todo;
-  const _Todo._() : super._();
+  factory _Todo(
+      {final int? id,
+      required final String title,
+      required final String description,
+      required final bool isCompleted,
+      required final DateTime dueDate}) = _$TodoImpl;
+  _Todo._() : super._();
+
+  factory _Todo.fromJson(Map<String, dynamic> json) = _$TodoImpl.fromJson;
 
   @override
-  TodoId get id => throw _privateConstructorUsedError;
+  int? get id;
   @override
-  String get title => throw _privateConstructorUsedError;
+  String get title;
   @override
-  String get description => throw _privateConstructorUsedError;
+  String get description;
   @override
-  bool get isCompleted => throw _privateConstructorUsedError;
+  bool get isCompleted;
   @override
-  DateTime get dueDate => throw _privateConstructorUsedError;
+  DateTime get dueDate;
   @override
   @JsonKey(ignore: true)
-  _$TodoCopyWith<_Todo> get copyWith => throw _privateConstructorUsedError;
+  _$$TodoImplCopyWith<_$TodoImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

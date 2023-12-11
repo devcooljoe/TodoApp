@@ -1,11 +1,12 @@
+import 'package:clean_architecture_todo_app/app/typedef.dart';
 import 'package:clean_architecture_todo_app/data/datasource/database/todos_database.dart';
-import 'package:clean_architecture_todo_app/data/mapper/todo_list_mapper.dart';
-import 'package:clean_architecture_todo_app/data/mapper/todo_mapper.dart';
 import 'package:clean_architecture_todo_app/data/model/todo.dart';
-import 'package:clean_architecture_todo_app/data/model/todo_id.dart';
 import 'package:clean_architecture_todo_app/data/model/todo_list.dart';
 import 'package:clean_architecture_todo_app/domain/repository/todos_repository.dart';
+import 'package:injectable/injectable.dart';
 
+@dev
+@Injectable(as: TodosRepository)
 class TodosRepositoryImpl implements TodosRepository {
   final TodosDatabase database;
 
@@ -14,7 +15,7 @@ class TodosRepositoryImpl implements TodosRepository {
   @override
   Future<TodoList> getTodoList() async {
     final todoListEntity = await database.allTodos();
-    return TodoListMapper.transformToModel(todoListEntity);
+    return TodoList.fromJson({'values': todoListEntity});
   }
 
   @override
@@ -24,13 +25,16 @@ class TodosRepositoryImpl implements TodosRepository {
     final bool isCompleted,
     final DateTime dueDate,
   ) async {
-    final todoEntity = await database.insertTodo(TodoMapper.transformToNewEntityMap(
-      title,
-      description,
-      isCompleted,
-      dueDate,
-    ));
-    return TodoMapper.transformToModel(todoEntity);
+    final todoEntity = await database.insertTodo(
+      Todo(
+        title: title,
+        description: description,
+        isCompleted: isCompleted,
+        dueDate: dueDate,
+        id: null,
+      ).toJson(),
+    );
+    return Todo.fromJson(todoEntity);
   }
 
   @override
@@ -48,9 +52,9 @@ class TodosRepositoryImpl implements TodosRepository {
       isCompleted: isCompleted,
       dueDate: dueDate,
     );
-    await database.updateTodo(TodoMapper.transformToMap(todo));
+    await database.updateTodo(todo.toJson());
   }
 
   @override
-  Future<void> deleteTodo(final TodoId id) async => await database.deleteTodo(id.value);
+  Future<void> deleteTodo(final TodoId id) async => await database.deleteTodo(id);
 }

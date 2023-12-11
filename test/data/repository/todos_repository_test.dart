@@ -1,5 +1,4 @@
 import 'package:clean_architecture_todo_app/data/model/todo.dart';
-import 'package:clean_architecture_todo_app/data/model/todo_id.dart';
 import 'package:clean_architecture_todo_app/data/model/todo_list.dart';
 import 'package:clean_architecture_todo_app/data/repository/todos_repository_impl.dart';
 import 'package:clean_architecture_todo_app/domain/repository/todos_repository.dart';
@@ -31,7 +30,7 @@ void main() {
       final expected = TodoList(
         values: [
           Todo(
-            id: const TodoId(value: 1),
+            id: 1,
             title: 'title',
             description: 'description',
             isCompleted: false,
@@ -48,7 +47,6 @@ void main() {
     setUp(() {
       when(database.insertTodo(
         {
-          'id': null,
           'title': 'title',
           'description': 'description',
           'is_completed': 0,
@@ -69,7 +67,6 @@ void main() {
       await repository.createTodo('title', 'description', false, date);
       verify(database.insertTodo(
         {
-          'id': null,
           'title': 'title',
           'description': 'description',
           'is_completed': 0,
@@ -93,7 +90,7 @@ void main() {
     });
 
     test('should return void', () async {
-      await repository.updateTodo(const TodoId(value: 1), 'new title', 'new description', true, date);
+      await repository.updateTodo(1, 'new title', 'new description', true, date);
       verify(database.updateTodo(
         {
           'id': 1,
@@ -112,7 +109,7 @@ void main() {
     });
 
     test('should return void', () async {
-      await repository.deleteTodo(const TodoId(value: 1));
+      await repository.deleteTodo(1);
       verify(database.deleteTodo(1)).called(1);
     });
   });
