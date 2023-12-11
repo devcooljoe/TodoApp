@@ -1,4 +1,4 @@
-import 'package:clean_architecture_todo_app/app/typedef.dart';
+import 'package:clean_architecture_todo_app/domain/entity/typedef.dart';
 
 abstract class TodosDatabase {
   Future<TodoListEntity> allTodos();

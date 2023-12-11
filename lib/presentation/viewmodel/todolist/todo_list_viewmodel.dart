@@ -1,7 +1,7 @@
 import 'package:clean_architecture_todo_app/app/di.dart';
-import 'package:clean_architecture_todo_app/app/typedef.dart';
 import 'package:clean_architecture_todo_app/data/model/todo.dart';
 import 'package:clean_architecture_todo_app/data/model/todo_list.dart';
+import 'package:clean_architecture_todo_app/domain/entity/typedef.dart';
 import 'package:clean_architecture_todo_app/domain/usecase/create_todo_usecase.dart';
 import 'package:clean_architecture_todo_app/domain/usecase/delete_todo_usecase.dart';
 import 'package:clean_architecture_todo_app/domain/usecase/get_todo_list_usecase.dart';

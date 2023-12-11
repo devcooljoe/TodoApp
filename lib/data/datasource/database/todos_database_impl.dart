@@ -1,5 +1,5 @@
-import 'package:clean_architecture_todo_app/app/typedef.dart';
 import 'package:clean_architecture_todo_app/data/datasource/database/todos_database.dart';
+import 'package:clean_architecture_todo_app/domain/entity/typedef.dart';
 import 'package:injectable/injectable.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';

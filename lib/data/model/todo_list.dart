@@ -1,5 +1,5 @@
-import 'package:clean_architecture_todo_app/app/typedef.dart';
 import 'package:clean_architecture_todo_app/data/model/todo.dart';
+import 'package:clean_architecture_todo_app/domain/entity/typedef.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'todo_list.freezed.dart';

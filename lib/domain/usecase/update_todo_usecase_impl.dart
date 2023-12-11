@@ -1,4 +1,4 @@
-import 'package:clean_architecture_todo_app/app/typedef.dart';
+import 'package:clean_architecture_todo_app/domain/entity/typedef.dart';
 import 'package:clean_architecture_todo_app/domain/repository/todos_repository.dart';
 import 'package:clean_architecture_todo_app/domain/usecase/update_todo_usecase.dart';
 import 'package:injectable/injectable.dart';
